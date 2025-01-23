@@ -7,3 +7,14 @@ tar cvf /opt/jenkins-bak.tar .
 gzip /opt/jenkins-bak.tar
 
 echo 'Backup done.'
+
+read -p "Copy files to backup server?" USER_INPUT
+
+if [[ "$USER_INPUT" == "y" || "$USER_INPUT" == "yes" ]];
+  then 
+    read -p "Insert server username: " USER
+    read -p "Insert server host/ip: " HOST
+    read -p "Insert directory path: " PATH
+    scp /opt/jenkins-bak.tar $USER@$HOST:$PATH
+    echo "Server backup done."
+fi
