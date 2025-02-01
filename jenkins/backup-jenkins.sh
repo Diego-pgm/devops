@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'Starting Jenkins Backup!'
-cd /var/lib/jenkins
+cd $JENKINS_HOME
 
 tar czvf $1 .
 
