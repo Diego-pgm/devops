@@ -3,7 +3,7 @@
 echo 'Starting Jenkins Backup!'
 cd $JENKINS_HOME
 
-tar czvf $1 . --exclude "./devops"
+tar czvf $1 . --exclude="./devops"
 
 echo 'Backup done.'
 
