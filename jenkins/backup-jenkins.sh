@@ -3,8 +3,7 @@
 echo 'Starting Jenkins Backup!'
 cd /var/lib/jenkins
 
-tar cvf /opt/jenkins-bak.tar .
-gzip /opt/jenkins-bak.tar
+tar czvf $1 .
 
 echo 'Backup done.'
 
