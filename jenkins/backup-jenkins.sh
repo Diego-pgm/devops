@@ -3,7 +3,7 @@
 echo 'Starting Jenkins Backup!'
 cd $JENKINS_HOME
 
-tar czvf $1 .
+tar czvf $1 . --exclude "devops"
 
 echo 'Backup done.'
 
@@ -14,6 +14,6 @@ if [[ "$USER_INPUT" == "y" || "$USER_INPUT" == "yes" ]];
     read -p "Insert server username: " USER
     read -p "Insert server host/ip: " HOST
     read -p "Insert directory path: " SPATH
-    scp /opt/jenkins-bak.tar.gz $USER@$HOST:$SPATH
+    scp $1 $USER@$HOST:$SPATH
     echo "Server backup done."
 fi
